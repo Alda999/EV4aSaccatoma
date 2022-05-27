@@ -6,6 +6,8 @@ import edu.ilp.aSaccatoma.service.IEstudianteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EstudianteServiceImpl implements IEstudianteService {
 
@@ -17,4 +19,10 @@ public class EstudianteServiceImpl implements IEstudianteService {
     public Estudiante obtnerEstudiantePorCodigo(String codigo) {
         return this.estudianteDao.findByCodigo(codigo);
     }
+
+    @Override
+    public List<Estudiante> EstudianteApeNom(String apenom) {
+        return this.estudianteDao.EstudiantesByApeNombre(apenom);
+    }
+
 }

@@ -3,13 +3,14 @@ package edu.ilp.aSaccatoma.entity;
 import javax.persistence.*;
 import java.util.List;
 
+
 @Entity
 @Table(name = "direccion")
 public class Direccion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDireccion;
+    private Long iddireccion;
 
     @Column(name = "calle",length = 20)
     private String calle;
@@ -25,41 +26,15 @@ public class Direccion {
     @Column(name = "pais",length = 20)
     private String pais;
 
-
-    //Constructor vacio
-
+    //settrs gttrs
 
 
-    @OneToMany(mappedBy = "direccion")
-    private List<Persona> persona;
-    public Direccion() {
+    public Long getIddireccion() {
+        return iddireccion;
     }
 
-    public Direccion(Long idDireccion) {
-        this.idDireccion = idDireccion;
-    }
-
-    //Constructor
-
-    public Direccion(Long idDireccion, String calle, String ciudad, String stado, String codigoPostal, String pais) {
-        this.idDireccion = idDireccion;
-        this.calle = calle;
-        this.ciudad = ciudad;
-        this.stado = stado;
-        this.codigoPostal = codigoPostal;
-        this.pais = pais;
-    }
-
-
-    //Getters And Setters
-
-
-    public Long getIdDireccion() {
-        return idDireccion;
-    }
-
-    public void setIdDireccion(Long idDireccion) {
-        this.idDireccion = idDireccion;
+    public void setIddireccion(Long iddireccion) {
+        this.iddireccion = iddireccion;
     }
 
     public String getCalle() {
@@ -100,5 +75,28 @@ public class Direccion {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    //contructor
+
+    public Direccion(String calle, String ciudad, String stado, String codigoPostal, String pais) {
+        this.calle = calle;
+        this.ciudad = ciudad;
+        this.stado = stado;
+        this.codigoPostal = codigoPostal;
+        this.pais = pais;
+    }
+
+    //const
+    @OneToMany(mappedBy = "direccion")
+     private List<Persona> personas;
+
+    public Direccion() {
+    }
+
+    //cont
+
+    public Direccion(Long iddireccion) {
+        this.iddireccion = iddireccion;
     }
 }

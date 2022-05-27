@@ -22,6 +22,9 @@ public class Persona {
    @Column(name = "email", length = 20)
     private String email;
 
+
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Direccion direccion;
     //Getters and Setters
 
 
@@ -73,9 +76,6 @@ public class Persona {
 
     //Constructor Vacio
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idDireccion")
-    private Direccion direccion;
 
 
     public Persona() {

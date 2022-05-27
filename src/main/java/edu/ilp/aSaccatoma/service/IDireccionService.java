@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface IDireccionService {
-    //Direccion Estudiante
-    Direccion buscarDireccionEstudiante(Long idDireccion);
+    //Buscar Direccion
+    //BUSCAR UNA ESCUELA ATRAVEZ DE SU ID Y DENOMINACION
+
+   //Direccion buscarDirecionByIdAndNombre(Long iddireccion, String Nombre);
 
 }

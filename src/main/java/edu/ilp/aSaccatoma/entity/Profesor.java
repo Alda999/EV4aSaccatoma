@@ -1,9 +1,7 @@
 package edu.ilp.aSaccatoma.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "profesor")
@@ -11,8 +9,16 @@ import javax.persistence.Table;
 public class Profesor extends Persona{
 
 
+    @Column(name = "pcodigo", length = 10,nullable = false)
+    private String pcodigo;
+
+
+
     @Column(name = "salario",length = 10)
     private Double salario;
+
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
+    private Asignatura asignatura;
 
     //Getters and Setters
 
@@ -51,7 +57,8 @@ public class Profesor extends Persona{
     }
 
     //Constructor vacio
-
+    @OneToMany(mappedBy = "Asignatura")
+    private List<Persona> personas;
 
     public Profesor() {
     }

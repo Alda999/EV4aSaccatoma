@@ -14,6 +14,9 @@ public class Estudiante extends Persona{
     private String serie;
 
     //Getters And Setters
+   /* @ManyToOne
+    @JoinColumn(name = "idpersona")*/
+
 
 
     public String getCodigo() {

@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DireccionServiceImpl implements IDireccionService {
-    @Autowired
-    private IDireccionDao direccionDao;
 
+
+   /* @Autowired
+    private IDireccionDao direccionDao;
     @Override
-    public Direccion buscarDireccionEstudiante(Long idDireccion) {
-        return this.direccionDao.findByDireccion(idDireccion);
-    }
+    public Direccion buscarDirecionByIdAndNombre(Long iddireccion, String Nombre) {
+        return this.direccionDao.findByIddireccionAndNombre(iddireccion,Nombre);
+    }*/
 }
